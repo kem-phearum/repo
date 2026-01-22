@@ -3,7 +3,9 @@
 <head>
   <title>PackageName</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="description" content="Package details from iOS repository">
+  <meta name="theme-color" content="#007bff">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css?rand=1">
@@ -11,15 +13,18 @@
   <script type="text/javascript" src="js/jquery.querystring.js"></script>
   <script type="text/javascript" src="js/data-loader-engine.js"></script>
   <script type="text/javascript" src="js/ios_version_check.js"></script>
-   <script type="text/javascript" src="js/content-blocks-index.js"></script>
+  <script type="text/javascript" src="js/content-blocks-index.js"></script>
   <script type="text/javascript">
-
 	bundleid = $.QueryString['p'];
 
 	var contentBlocks = getContentBlocks();
 
     $( document ).ready(function() {
-		//return;
+		if (!bundleid) {
+			$("#packageError").show();
+			$("#packageInformation").hide();
+			return;
+		}
 		populateContentBlocks(
 			(bundleid+"/info.xml"),
 			contentBlocks,
@@ -52,26 +57,30 @@
 	</div>
 
 	<div class="container">
-		<h5>DESCRIPTION</h5>
+		<h5><i class="fa fa-info-circle"></i> DESCRIPTION</h5>
 		<ul id="descriptionList" class="list-group">
-			<li id="screenshotsLink" class="link-item list-group-item">Screenshots</li>
+			<li id="screenshotsLink" class="link-item list-group-item">
+				<i class="fa fa-picture-o"></i> Screenshots
+			</li>
 		</ul>
 	</div>
 
 	<div class="container">
-		<h5>IN THIS VERSION <span id="versionBadge" class="badge" /></h5>
+		<h5><i class="fa fa-history"></i> IN THIS VERSION <span id="versionBadge" class="badge" /></h5>
 		<ul id="changesList" class="list-group">
-			<li id="changelogLink"  class="link-item list-group-item">Full Changelog</li>
+			<li id="changelogLink"  class="link-item list-group-item">
+				<i class="fa fa-file-text-o"></i> Full Changelog
+			</li>
 		</ul>
 	</div>
 	<div class="container" id="dependenciesContainer">
-		<h5>DEPENDENCIES</h5>
+		<h5><i class="fa fa-link"></i> DEPENDENCIES</h5>
 		<ul id="dependencyList" class="list-group">
 		</ul>
 	</div>
 
 	<div class="container" id="externalLinksContainer">
-		<h5>LINKS</h5>
+		<h5><i class="fa fa-external-link"></i> LINKS</h5>
 		<ul id="externalLinksList" class="list-group">
 		</ul>
 	</div>
@@ -80,7 +89,15 @@
 <div id="packageError" style="display:none">
 	<div class="container">
 	  <div class="alert alert-danger">
-		<strong>Oh snap!</strong> The package you are trying to view is not hosted on this repository.
+		<h5><i class="fa fa-exclamation-triangle"></i> Package Not Found</h5>
+		<p><strong>Sorry!</strong> The package you are trying to view is not available in this repository.</p>
+		<p>This could happen if:</p>
+		<ul>
+			<li>The package ID is incorrect</li>
+			<li>The package has been removed or archived</li>
+			<li>There's a temporary connection issue</li>
+		</ul>
+		<p><a href="javascript:history.back()" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Go Back</a></p>
 	  </div>
 	</div>
 </div>

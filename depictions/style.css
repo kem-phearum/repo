@@ -1,71 +1,256 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 1em;
+    margin: 0;
+    padding: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
 }
+
+/* Container and Layout */
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* Cards and Headers */
 .card {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* Jumbotron */
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.jumbotron h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* List Groups */
 .thumbnail {
-    margin-bottom: 2em;;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
 .list-group {
     margin-bottom: 2em;
 }
+
+.list-group-item {
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+}
+
 .disable-hover {
     pointer-events: none;
 }
+
+/* Link Items */
 .link-item {
     list-style-type: none;
-    padding: 17px 15px;
+    padding: 15px 17px;
     display: block;
     color: #4f89bb !important;
     text-align: left;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-decoration: none;
 }
+
 .link-item:hover {
     border: 1px solid #ddd;
     background-color: #f5f5f5;
+    transform: translateX(2px);
 }
 
-html.can-touch .link-item:hover{ /* disable hover effect when input is touch */
+html.can-touch .link-item:hover {
     background-color: #fff;
+    transform: none;
 }
 
-html.can-touch .link-item:active{ /* disable hover effect when input is touch */
+html.can-touch .link-item:active {
     background-color: #f5f5f5;
 }
 
+/* Icons */
 .fa {
     font-size: 16px;
     margin-left: 5px;
     margin-right: 10px;
 }
 
+/* Alert Styling */
+.alert {
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Typography */
+h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Badge */
+.badge {
+    padding: 0.35em 0.65em;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 12px;
+    background-color: #007bff;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5em;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .jumbotron {
+        padding: 1.5rem 1rem;
+    }
+
+    .jumbotron h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-header,
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    .link-item {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.25em;
+    }
+
+    .jumbotron h1 {
+        font-size: 1.25rem;
+    }
+
+    .link-item {
+        padding: 10px 12px;
+    }
+
+    .fa {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+}
+
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1f1f1f;
-        color: white;
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .card {
+        background-color: #2a2a2a;
+        border-color: #3a3a3a;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
 
     .card-header {
-        background-color: #2f2f2f;
+        background-color: #333333;
+        color: #e0e0e0;
+        border-color: #3a3a3a;
     }
+
     .card-body {
-        background-color: #1f1f1f;
+        background-color: #2a2a2a;
+        color: #e0e0e0;
     }
+
     .jumbotron {
-        background-color: #2f2f2f;
+        background-color: #333333;
+        color: #e0e0e0;
+    }
+
+    .jumbotron h1 {
+        color: #fff;
     }
 
     .list-group-item {
-        background-color: #1f1f1f;
-        border-color:  #2f2f2f;;
+        background-color: #2a2a2a;
+        border-color: #3a3a3a;
+        color: #e0e0e0;
     }
 
-    html.can-touch .link-item:hover{ /* disable hover effect when input is touch */
-        background-color: #1f1f1f;
-    }
-    
-    html.can-touch .link-item:active{ /* disable hover effect when input is touch */
-        background-color: #1f1f1f;
+    .link-item {
+        color: #64b5f6 !important;
+        transition: all 0.2s ease;
     }
 
+    .link-item:hover {
+        background-color: #3a3a3a;
+        border-color: #4a4a4a;
+    }
+
+    html.can-touch .link-item:hover {
+        background-color: #2a2a2a;
+    }
+
+    html.can-touch .link-item:active {
+        background-color: #3a3a3a;
+    }
+
+    .alert-danger {
+        background-color: #5a1f1f;
+        border-color: #6a2f2f;
+        color: #ff8a8a;
+    }
 }
