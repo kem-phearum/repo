@@ -86,7 +86,20 @@ For a detailed package information page:
 2. Create `info.xml` file with package details
 3. Users can then see full changelog, screenshots, dependencies, etc.
 
-#### 6. Commit and Push Changes
+#### 6. Create Packages.bz2 (Compressed Index)
+Cydia prefers the compressed version of the Packages file for faster downloads:
+
+```bash
+# Compress the Packages file
+bzip2 -k Packages
+
+# This creates Packages.bz2 alongside Packages
+# The -k flag keeps the original Packages file
+```
+
+**Note:** Some Cydia clients download Packages.bz2 instead of Packages for efficiency.
+
+#### 7. Commit and Push Changes
 ```bash
 # Add files to git
 git add debs/ Packages Packages.bz2
