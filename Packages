@@ -26,3 +26,28 @@ Name: Old Package
 Author: Reposi3 <reposithree@gmail.com>
 Depiction: https://supermamon.github.io/Reposi3/depictions/?p=com.supermamon.oldpackage
 
+Package: com.4khmeriphone.iphone5.0.x
+Version: 1.0.2
+Section: Keyboards
+Maintainer: 4Khmeriphoneteam <4khmeriphone@gmail.com>
+Depends: 4khmeriphone.com.sourcegui, mobilesubstrate (>=0.9.3995)
+Architecture: iphoneos-arm
+Filename: ./debs/iphone5.0.x_1.0.2_iphoneos-arm.deb
+Size: 127430
+MD5sum: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+Description: Khmer Keyboard for iPhone iOS5+. Turn on Khmer keyboard go to Settings -> General -> International -> Keyboards -> Add New Keyboard
+Name: Khmer Keyboard iPhone
+Author: 4Khmeriphoneteam <4khmeriphone@gmail.com>
+
+Package: com.4khmeriphone.Khmerfonts5.0.x
+Version: 1.0.2
+Section: Fonts
+Maintainer: 4Khmeriphoneteam <4khmeriphone@gmail.com>
+Depends: 4khmeriphone.com.sourcegui
+Architecture: iphoneos-arm
+Filename: ./debs/Khmerfonts5.0.x_1.0.2_iphoneos-arm.deb
+Size: 5248960
+MD5sum: b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7
+Description: Khmer Fonts for iPhone and iPad iOS5+
+Name: Khmer Fonts
+Author: 4Khmeriphoneteam <4khmeriphone@gmail.com>

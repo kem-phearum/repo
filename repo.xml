@@ -1,14 +1,11 @@
 <repo>
 	<footerlinks>
 		<link>
-			<name>Follow me on Twitter</name>
-			<url>https://twitter.com/reposi3</url>
-			<iconclass>fa fa-twitter</iconclass>
+			<name>Follow 4Khmer on Facebook</name>
+			<url>https://facebook.com/4khmeriphone</url>
+			<iconclass>fa fa-facebook</iconclass>
 		</link>
 		<link>
-			<name>I want this depiction template</name>
-			<url>https://github.com/supermamon/Reposi3/</url>
-			<iconclass>fa fa-thumbs-up</iconclass>
-		</link>
-	</footerlinks>
-</repo>
+			<name>GitHub Repository</name>
+			<url>https://github.com/kem-phearum/repo</url>
+			<iconclass>fa fa-github</iconclass>
